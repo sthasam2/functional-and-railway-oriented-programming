@@ -1,5 +1,6 @@
-from toolz import curry
 from typing import Callable, Set
+
+from toolz import curry
 
 
 @curry

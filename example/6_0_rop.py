@@ -1,16 +1,15 @@
 from __future__ import annotations
-from typing import Callable, TypeVar, Generic, Optional, Set
-from toolz import curry
 
+from typing import Callable, Generic, Optional, Set, TypeVar
+
+from toolz import curry
 
 T = TypeVar("T")
 U = TypeVar("U")
 
 
 class Result(Generic[T]):
-    def __init__(
-        self, value: Optional[T], is_success: bool, error: Optional[Exception] = None
-    ):
+    def __init__(self, value: Optional[T], is_success: bool, error: Optional[Exception] = None):
         self.value = value
         self.is_success = is_success
         self.error = error

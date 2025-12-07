@@ -2,6 +2,7 @@ from typing import Set
 
 DATABASE: Set[str] = {"test@example.com"}
 
+
 def signup(email: str) -> str:
     # trim
     email = email.strip()
@@ -19,5 +20,6 @@ def signup(email: str) -> str:
 
     DATABASE.add(email)
     return "Signup successful"
+
 
 print(signup("   Test@example.com  "))

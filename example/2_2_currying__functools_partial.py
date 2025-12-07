@@ -1,5 +1,5 @@
-from typing import Set
 from functools import partial
+from typing import Set
 
 
 def min_length(email: str, n: int) -> bool:

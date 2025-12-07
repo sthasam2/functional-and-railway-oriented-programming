@@ -1,6 +1,5 @@
-import os
-from pymonad.tools import curry
 from pymonad.either import Left, Right
+from pymonad.tools import curry
 
 DATABASE = {"test@example.com"}
 

@@ -1,6 +1,7 @@
 from typing import Set
-from returns.result import Result, Success, Failure, safe
+
 from returns.curry import curry
+from returns.result import Result, safe
 
 DATABASE: Set[str] = {"test@example.com"}
 
@@ -41,13 +42,7 @@ def insert(db: Set[str], email: str) -> str:
 
 
 def signup(email: str) -> Result[str, Exception]:
-    return (
-        trim(email)
-        .bind(lower)
-        .bind(validate_length(5))
-        .bind(validate_available(DATABASE))
-        .bind(insert(DATABASE))
-    )
+    return trim(email).bind(lower).bind(validate_length(5)).bind(validate_available(DATABASE)).bind(insert(DATABASE))
 
 
 print(signup("   Hello@EX.com  "))  # Success
